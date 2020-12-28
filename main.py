@@ -1,9 +1,8 @@
 from sort_analyser import random_list_generator, measure_runtime, select_function
-from sort_functions import *
 
 
 def menu():
-    print("-------------------------- Welcome to my sorting algorithm analyser --------------------------|\n")
+    print("----------------------- Welcome to sorting algorithm analyser -----------------------\n")
     select_options()
 
     user_input = int(input("Enter option: "))
@@ -36,12 +35,11 @@ def menu():
         elif user_input == 6:  # save user profile
             gen_list = random_list_generator(size, maximum_num)  # generates array
             for functions in run:
-                res = measure_runtime(functions, gen_list)
+                res = [measure_runtime(functions, gen_list)]
             return res
 
         select_options()  # display a list of options for the user to choose from
         user_input = int(input("\nSelect from the menu: "))
-        gen_list = random_list_generator(size, maximum_num)  # generates array
 
 
 def select_options():
