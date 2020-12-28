@@ -7,13 +7,9 @@
 - [x] [Quick sort](sort_functions.py)
 ---
 
+### To use run [main.py](main.py)
+
 *Screenshots* 
 
-[comment]: <> (![Screenshots]&#40;img/s1.png&#41; | ![Screenshots]&#40;img/s2.png&#41; )
-
-[comment]: <> (-------------------------- | --------------------------)
-
-[comment]: <> (![Screenshots]&#40;img/s3.png&#41; | ![Screenshots]&#40;img/s4.png&#41;)
-
-[comment]: <> (![Screenshots]&#40;img/s5.png&#41; | ![Screenshots]&#40;img/s6.png&#41;)
+![Screenshots](s1.png) 
 
