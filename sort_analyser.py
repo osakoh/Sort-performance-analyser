@@ -33,7 +33,7 @@ def select_function(choice):
     elif choice == 5:
         return sorted
     elif choice == 6:
-        return [bubble_sort, insertion_sort, merge_sort, quick_sort, sorted]
+        return [sorted, bubble_sort, insertion_sort, merge_sort, quick_sort]
 
 
 def measure_runtime(func, arr):
@@ -47,4 +47,5 @@ def measure_runtime(func, arr):
     end = time.time()
     fn = func.__name__.replace("_", " ").title()
     val = round((end - start), 7)
-    print(f"--> Runtime for {fn}: {val} seconds <--")
+    print(f"  Runtime for {fn}: {val} seconds                    \n"
+          f"-----------------------------------------------------\n")
