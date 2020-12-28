@@ -17,22 +17,11 @@ def random_list_generator(size, max_num):
     return [random.randint(1, max_num) for _ in range(size)]
 
 
-def select_options():
-    print("____________________________________\n"
-          "| 1.     Bubble sort               |\n"
-          "| 2.     Insertion sort            |\n"
-          "| 3.     Merge sort                |\n"
-          "| 4.     Quick Sort                |\n"
-          "| 5.     Python's sorted Function  |\n"
-          "| 6.     Run all function          |\n"
-          "| 0.     Exit application          |\n"
-          "|__________________________________|")
-
-
 def select_function(choice):
-    select_options()
-    choice = int(input("Select algorithm to run: "))
-
+    """
+    :param choice: an integer value to select a sorting algorithm
+    :return: a an object of a sorting algorithm, i.e it doesn't call the function
+    """
     if choice == 1:
         return bubble_sort
     elif choice == 2:
@@ -44,10 +33,7 @@ def select_function(choice):
     elif choice == 5:
         return sorted
     elif choice == 6:
-        temp = [bubble_sort, insertion_sort, merge_sort, quick_sort, sorted]
-        return temp
-    else:
-        exit()
+        return [bubble_sort, insertion_sort, merge_sort, quick_sort, sorted]
 
 
 def measure_runtime(func, arr):
@@ -60,6 +46,5 @@ def measure_runtime(func, arr):
     func(arr)
     end = time.time()
     fn = func.__name__.replace("_", " ").title()
-    print(f"\nRuntime for {fn}: {end - start} seconds")
-
-
+    val = round((end - start), 7)
+    print(f"--> Runtime for {fn}: {val} seconds <--")
