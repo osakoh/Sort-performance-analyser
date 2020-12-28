@@ -36,8 +36,50 @@ class Sort:
 
         return arr
 
+    def merge(self, arr1, arr2):
+        """
+        first and second list are sorted in ascending order
+        function returns a sorted merged list
+        """
+        i = j = 0
+        merged_list = []
+
+        while i < len(arr1) and j < len(arr2):
+            if arr1[i] < arr2[j]:
+                merged_list.append(arr1[i])
+                i += 1
+            else:
+                merged_list.append(arr2[j])
+                j += 1
+
+        while i < len(arr1):
+            merged_list.append(arr1[i])
+            i += 1
+
+        while j < len(arr2):
+            merged_list.append(arr2[j])
+            j += 1
+
+        return merged_list
+
+    def divide_and_merge(self, arr):
+        # base case for recursion
+        if len(arr) < 2:  # 1 element
+            return arr
+
+        else:
+            midpoint = len(arr) // 2  # integer division
+            left = arr[:midpoint]
+            right = arr[midpoint:]
+
+            l1 = self.divide_and_merge(left)
+            l2 = self.divide_and_merge(right)
+        return self.merge(l1, l2)
+
+
 
 s = Sort()
 l = [-1, 16, 85, 0, 12, 34, 60, 70, 8, 9, 3, 2, 5]
 print(f"Bubble sort:    {s.bubble_sort(l)}")
 print(f"Insertion sort: {s.insertion_sort(l)}")
+print(f"Merge sort:     {s.divide_and_merge(l)}")
