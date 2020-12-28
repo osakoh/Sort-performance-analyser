@@ -76,6 +76,23 @@ class Sort:
             l2 = self.divide_and_merge(right)
         return self.merge(l1, l2)
 
+    def quick_sort(self, arr):
+        # base case
+        if len(arr) < 1:
+            return arr
+
+        pivot = random.randint(0, len(arr) - 1)
+        left, middle, right = [], [], []
+
+        for num in range(0, len(arr)):
+            if arr[num] < arr[pivot]:
+                left.append(arr[num])
+            elif arr[num] == arr[pivot]:
+                middle.append(arr[num])
+            else:
+                right.append(arr[num])
+        # return left, middle, right
+        return self.quick_sort(left) + middle + self.quick_sort(right)
 
 
 s = Sort()
@@ -83,3 +100,4 @@ l = [-1, 16, 85, 0, 12, 34, 60, 70, 8, 9, 3, 2, 5]
 print(f"Bubble sort:    {s.bubble_sort(l)}")
 print(f"Insertion sort: {s.insertion_sort(l)}")
 print(f"Merge sort:     {s.divide_and_merge(l)}")
+print(f"Quick sort:     {s.quick_sort(l)}")
