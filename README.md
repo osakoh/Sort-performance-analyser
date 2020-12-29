@@ -5,8 +5,9 @@
 - [x] [Insertion sort](sort_functions.py)
 - [x] [Merge sort](sort_functions.py)
 - [x] [Quick sort](sort_functions.py)
----
 #### It can also analyse Python's sorted function alongside the above algorithms.
+
+---
 
 ### To use run [main.py](main.py)
 
